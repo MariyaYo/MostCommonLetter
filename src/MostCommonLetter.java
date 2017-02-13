@@ -9,7 +9,6 @@ public class MostCommonLetter {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Please enter some text:");
 		String text = sc.nextLine();
-		System.out.println();
 		sc.close();
 		text = text.toLowerCase();
 		TreeMap<Character, Integer> sortedLetters = new TreeMap<>();
@@ -25,7 +24,6 @@ public class MostCommonLetter {
 			}
 		}
 		ArrayList<Character> list = new ArrayList<>();
-		//i'm arranging them from least common to most common ..
 		for(int i = 0; i <text.length(); i++){
 			for(Entry<Character, Integer> a : sortedLetters.entrySet()){
 				if(a.getValue() == i){
@@ -43,12 +41,11 @@ public class MostCommonLetter {
 			}else{
 				System.out.print(list.get(i) + ": " + sortedLetters.get(list.get(i)).intValue() + " ");
 			}
-			int howManyHashtags = (list.size()%count*sortedLetters.get(list.get(i)).intValue());
-			//and again for looks ...
-			for(int j = 0; j< howManyHashtags; j++){
-				System.out.print("#");
-			}
-			System.out.println();
+				int howManyHashtags = ((100/count)*sortedLetters.get(list.get(i)).intValue());
+				for(int j = 0; j< howManyHashtags; j++){
+					System.out.print("#");
+				}
+				System.out.println();
 		}
 	}
 }
