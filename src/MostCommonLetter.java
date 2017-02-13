@@ -9,6 +9,7 @@ public class MostCommonLetter {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Please enter some text:");
 		String text = sc.nextLine();
+		System.out.println();
 		sc.close();
 		text = text.toLowerCase();
 		TreeMap<Character, Integer> sortedLetters = new TreeMap<>();
@@ -24,6 +25,7 @@ public class MostCommonLetter {
 			}
 		}
 		ArrayList<Character> list = new ArrayList<>();
+		//i'm arranging them from least common to most common ..
 		for(int i = 0; i <text.length(); i++){
 			for(Entry<Character, Integer> a : sortedLetters.entrySet()){
 				if(a.getValue() == i){
